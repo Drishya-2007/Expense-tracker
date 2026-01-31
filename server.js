@@ -58,10 +58,6 @@ app.delete("/expenses/:id", async (req, res) => {
 });
 
 
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
 
 // Get daily totals
 app.get("/expenses/daily", async (req, res) => {
