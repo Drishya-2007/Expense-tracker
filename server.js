@@ -62,9 +62,6 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-app.listen(PORT, () => {
-  console.log("Server running on port " + PORT);
-});
 
 // Get daily totals
 app.get("/expenses/daily", async (req, res) => {
@@ -78,4 +75,13 @@ app.get("/expenses/daily", async (req, res) => {
     { $sort: { _id: 1 } } // sort by date ascending
   ]);
   res.json(data);
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+// Listen LAST
+app.listen(PORT, () => {
+  console.log("Server running on port " + PORT);
 });
