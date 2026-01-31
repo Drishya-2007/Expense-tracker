@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const homeBtn = document.getElementById("homeBtn");
 
   async function load() {
-    const res = await fetch("http://localhost:5000/expenses/daily");
+    const res = await fetch("/expenses/daily");
     const data = await res.json();
 
     dailyList.innerHTML = "";
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   clearBtn.onclick = async () => {
     if (!confirm("Clear all?")) return;
-    await fetch("http://localhost:5000/expenses/clear", { method: "DELETE" });
+    await fetch("/expenses/clear", { method: "DELETE" });
     await load();
   };
 
