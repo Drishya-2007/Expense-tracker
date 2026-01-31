@@ -119,7 +119,7 @@ doneBtn.addEventListener("click", async (e) => {
 
   try {
     for (let exp of expenses) {
-      await fetch("http://localhost:5000/expenses", {
+      await fetch("/expenses", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ date, name: exp.name, amount: exp.amount })
