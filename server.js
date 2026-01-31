@@ -77,9 +77,11 @@ app.get("/expenses/daily", async (req, res) => {
   res.json(data);
 });
 
-app.get("/*", (req, res) => {
+// Fallback for frontend (Express v5 SAFE)
+app.use((req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
+
 
 // Listen LAST
 app.listen(PORT, () => {
