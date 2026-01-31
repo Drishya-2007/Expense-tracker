@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+    <title>Result page</title>
+     <meta name="description" content="This is a expense tracker web page"/>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="hexpense.css">
+        <div class="content">
+  <h1>Daily Expense History</h1>
+  <div id="dailyList"></div>
+</div>
+<div class="buttons">
+  <button id="clearBtn">Clear History</button>
+  <button id="homeBtn">Home</button>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", async () => {
+  const dailyList = document.getElementById("dailyList");
+  const clearBtn = document.getElementById("clearBtn");
+  const homeBtn = document.getElementById("homeBtn");
+
+  async function load() {
+    const res = await fetch("http://localhost:5000/expenses/daily");
+    const data = await res.json();
+
+    dailyList.innerHTML = "";
+
+    if (data.length === 0) {
+      dailyList.innerHTML = "<p>No expenses yet</p>";
+      return;
+    }
+
+    data.forEach(day => {
+      const card = document.createElement("div");
+      card.className = "daily-card";
+      card.innerHTML = `
+        <b>${day._id}</b><br>
+        Total: ₹${day.total}
+      `;
+      dailyList.appendChild(card);
+    });
+  }
+
+  clearBtn.onclick = async () => {
+    if (!confirm("Clear all?")) return;
+    await fetch("http://localhost:5000/expenses/clear", { method: "DELETE" });
+    await load();
+  };
+
+  homeBtn.onclick = () => {
+    window.location.href = "Expense_tracker.html";
+  };
+
+  load();
+});
+</script>
+
+
+
+
+
+</head></html>

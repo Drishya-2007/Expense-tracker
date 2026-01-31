@@ -1,0 +1,56 @@
+html,body{
+    height: 100%;
+    margin: 0;
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-image:
+        linear-gradient(
+            rgba(173, 216, 230, 0.6), 
+            rgba(173, 216, 230, 0.6)
+        ),
+    url("money1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.about-container {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.about-heading {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.about-subheading {
+    font-size: 24px;
+    margin-top: 30px;
+}
+
+.about-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.about-list {
+    font-size: 18px;
+    margin-left: 20px;
+}
+@media (max-width: 768px) {
+    .about-heading {
+        font-size: 28px;
+    }
+
+    .about-text,
+    .about-list {
+        font-size: 16px;
+    }
+
+    .about-container {
+        margin: 30px 15px;
+    }
+}

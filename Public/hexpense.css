@@ -1,0 +1,242 @@
+html,body {
+    height: 100%;
+    margin: 0;
+    background-attachment: fixed;
+    min-height: 100vh;
+    background-image:
+        linear-gradient(
+            rgba(173, 216, 230, 0.6), 
+            rgba(173, 216, 230, 0.6)
+        ),
+    url("money1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main-heading {
+    
+    font-size:50px;
+    font-weight: bolder;
+    text-align:center;
+    color: rgb(5, 5, 5);
+}
+.sub-text {
+    
+    font-size: 32px;
+    margin-top: -10px;
+    font-weight: bold;
+    text-align:center;
+    color: rgb(7, 7, 7);
+}
+.sub-text1{
+    
+   font-size: 28px;
+   margin-top: -20px;
+    font-weight: lighter;
+    text-align:center;
+    color: rgb(9, 9, 9);
+} 
+.form-box{
+    border: 2px solid #444; 
+    display:inline-block;
+    padding:20px;
+    border-radius:30px;
+    background-color: rgba(143, 180, 193, 0.6);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+.content{
+    
+    text-align:center;
+}
+.date{
+    margin-top: -40px;
+}
+.DONE{
+    margin: 20px 0 0 0;
+    padding: 15px 8px;          
+    width: 20%;
+    height:20%;
+    border: 1px solid hsla(0,72%,27%,0);
+    font: bold 1.2em myFirstFont;
+    color: #fff;
+    background-color: #2e77ed;
+    border-radius:20px;
+    box-shadow: 5px 5px 5px rgba(30,50,40,0.5);
+}
+.DONE:hover{
+    background-color: #1a61d3;
+}
+.add:hover{
+     background-color: rgb(196, 236, 236);
+}
+.add{
+    border-radius: 5px;
+}
+.expense-card {
+  background: #f3f3f3;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.expense-card button {
+  margin-left: 5px;
+}
+.expense-card {
+  background: #f2f2f2;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+
+@media (max-width: 600px) {
+    .main-heading {
+        font-size: 28px;
+    }
+
+    .sub-text {
+        font-size: 18px;
+        margin-top: -5px;
+    }
+
+    .sub-text1 {
+        font-size: 16px;
+        margin-top: -8px;
+    }
+}
+.btn1{
+    margin: 20px 0 0 0;
+    padding: 15px 8px;          
+    width: 18%;
+    height:20%;
+    
+    border-radius:20px;
+    box-shadow: 5px 5px 5px rgba(30,50,40,0.5);
+     display: inline-block;           
+    font: bold 1.2em myFirstFont;
+    color: #fff;                 
+    background-color: #2e77ed;   
+          
+    border: none;
+    text-decoration: none;       
+    text-align: center;         
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn1:hover{
+    background-color: #1a61d3;
+}
+
+
+.form-container {
+    position: relative;
+    width: 350px;
+    height: auto;
+}
+
+
+#expenseList {
+  margin-bottom: 10px;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: white;
+  padding: 30px 50px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: pop 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.tick {
+  font-size: 50px;
+  color: #4BB543; /* nice green */
+  margin-bottom: 10px;
+  animation: tick-pop 0.5s ease;
+}
+
+.popup-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+@keyframes pop {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes tick-pop {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.daily-card {
+  background: #f2f6f2; /* light green for daily total */
+  padding: 15px;
+  margin: 12px 0;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.buttons button {
+    padding: 10px 22px;
+    margin: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.date-text {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.total-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #030703;
+}
+
+.daily-card {
+  background: #e9f7ef;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+#clearBtn { background: #e74c3c; color: white; }
+#homeBtn  { background: #3498db; color: white; }
