@@ -58,7 +58,7 @@ app.delete("/expenses/:id", async (req, res) => {
 });
 
 
-app.get('/', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
@@ -77,7 +77,7 @@ app.get("/expenses/daily", async (req, res) => {
   res.json(data);
 });
 
-app.get("*", (req, res) => {
+app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
